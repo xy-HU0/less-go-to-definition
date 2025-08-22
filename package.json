@@ -1,0 +1,52 @@
+{
+  "name": "less-go-to-definition",
+  "displayName": "Less Go To Definition",
+  "description": "",
+  "version": "0.0.3",
+  "publisher": "xyHU",
+  "engines": {
+    "vscode": "^1.100.2"
+  },
+  "repository": {
+        "type": "git",
+        "url": "https://github.com/xy-HU0/less-go-to-definition"
+    },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:less"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Less Mixin Go To Definition",
+      "properties": {
+        "less-go-to-definition.includePaths": {
+          "type": "array",
+          "default": [],
+          "description": "An array of absolute paths to use as search directories for non-relative @import statements."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "~1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.32.0",
+    "typescript": "^5.9.2"
+  }
+}
